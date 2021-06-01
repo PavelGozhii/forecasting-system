@@ -7,6 +7,8 @@ import SignIn from "../views/SignIn";
 import SignUp from "../views/SignUp";
 import Contacts from "../views/Contacts"
 import AddHumanSettlement from "../views/AddSettlement"
+import CityDetails from "../views/CityDetails";
+import GetPredict from "../views/GetPredict";
 
 Vue.use(VueRouter)
 
@@ -55,6 +57,23 @@ const routes = [
         path: "/add-human-settlement",
         name: "AddHumanSettlement",
         component: AddHumanSettlement,
+        meta: {
+            requiredAuth: true
+        }
+    },
+    {
+        path: '/view/element/:id',
+        name: 'CityDetails',
+        component: CityDetails,
+        props: true,
+        meta: {
+            requiredAuth: true
+        }
+    },
+    {
+        path: '/predict',
+        name: 'GetPredict',
+        component: GetPredict,
         meta: {
             requiredAuth: true
         }

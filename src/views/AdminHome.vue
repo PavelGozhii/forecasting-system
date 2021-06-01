@@ -17,9 +17,14 @@
                     </ul>
                 </div>
                 <div>
-                    <router-link to="/add-human-settlement" class="btn btn-primary">
+                    <router-link to="/add-human-settlement" class="btn btn-primary mx-5">
                         Додати населений пункт
                     </router-link>
+                </div>
+                <div>
+                  <button @click="logOut" class="btn btn-primary mx-5">
+                    Вийти
+                  </button>
                 </div>
             </nav>
         </header>
@@ -56,7 +61,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Ужгород</h4>
                             <p class="card-text">Закарпатьска область</p>
-                            <a href="view/element.html?id=data.id" class="btn btn-primary">Детальніше</a>
+                            <router-link :to="`/view/element/${1}`" class="btn btn-primary">Детальніше</router-link>
                         </div>
                     </div>
                 </div>
@@ -68,8 +73,18 @@
 <script>
     // @ is an alias to /src
 
+    import {mapActions} from "vuex";
+
     export default {
         name: 'AdminHome',
+        methods: {
+          ...mapActions({
+            signOut: 'user/logOut'
+          }),
+          logOut() {
+            this.signOut()
+          }
+        },
         components: {}
     }
 </script>

@@ -18,7 +18,7 @@
                             <label>Пароль</label>
                             <input v-model="password" type="password" class="form-control" placeholder="Пароль">
                         </div>
-                        <button type="submit" @click="signIn" class="btn btn-black">Увійти</button>
+                        <button type="submit" class="btn btn-black">Увійти</button>
                         <router-link to="/sign-up" type="submit" class="btn btn-secondary m-3">Зареєструватися
                         </router-link>
                     </form>
@@ -40,6 +40,9 @@
             ...mapActions({
                 login: "user/login"
             }),
+            showAlert(message) {
+              this.$swal(message);
+            },
             signIn() {
                 this.login({
                     email: this.email,
@@ -52,6 +55,9 @@
                         this.$router.push("/user")
                     }
                 })
+                  .catch((message) => {
+                    this.showAlert(message)
+                  })
             }
         }
     }
@@ -111,7 +117,7 @@
         }
 
         .login-form {
-            margin-top: 80%;
+            margin-top: 100px;
         }
 
         .register-form {

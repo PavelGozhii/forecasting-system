@@ -11,12 +11,32 @@
                 <div class="login-form">
                     <form>
                         <div class="form-group">
-                            <label>Почта</label>
+                          <label>Ім'я</label>
+                          <input type="text" class="form-control" placeholder="Ім'я">
+                        </div>
+                        <div class="form-group">
+                          <label>Прізвище</label>
+                          <input type="text" class="form-control" placeholder="Прізвище">
+                        </div>
+                        <div class="form-group">
+                          <label>По батькові</label>
+                          <input type="text" class="form-control" placeholder="По батькові">
+                        </div>
+                        <div class="form-group">
+                          <label>Дата народження</label>
+                          <input type="text" class="form-control" placeholder="Дата народження">
+                        </div>
+                        <div class="form-group">
+                            <label>Пошта</label>
                             <input type="email" class="form-control" placeholder="Почта">
                         </div>
                         <div class="form-group">
                             <label>Пароль</label>
                             <input type="password" class="form-control" placeholder="Пароль">
+                        </div>
+                        <div class="form-group">
+                          <label>Повторіть пароль</label>
+                          <input type="password" class="form-control" placeholder="Повторіть пароль">
                         </div>
                         <button type="submit" @click="signUp" class="btn btn-black">Зареєструватися</button>
                         <router-link to="/sign-in" type="submit" class="btn btn-secondary m-3">Увійти
@@ -29,7 +49,17 @@
 </template>
 
 <script>
-
+  export default {
+    data: () => ({
+      name: null,
+      secondName: null,
+      thirdName: null,
+      birthDate: null,
+      email: null,
+      password: null,
+      repeatPassword: null
+    })
+  }
 </script>
 
 <style scoped>
@@ -86,7 +116,7 @@
         }
 
         .login-form {
-            margin-top: 80%;
+            margin-top: 100px;
         }
 
         .register-form {
