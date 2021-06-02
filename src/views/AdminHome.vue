@@ -36,7 +36,7 @@
                         <div class="card-body">
                             <h4 class="card-title">{{item.name}}</h4>
                             <p class="card-text">{{item.regionName}}</p>
-                            <router-link to="/view-element/1" class="btn btn-primary">Детальніше</router-link>
+                            <router-link :to="`/view-element/${item.id}`" class="btn btn-primary">Детальніше</router-link>
                         </div>
                     </div>
                 </div>

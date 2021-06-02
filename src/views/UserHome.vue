@@ -26,6 +26,11 @@
                         Профіль
                     </router-link>
                 </div>
+                <div>
+                    <button @click="logOut" class="btn btn-primary mx-5">
+                        Вийти
+                    </button>
+                </div>
             </nav>
         </header>
         <div class="content container">
@@ -51,6 +56,7 @@
 
     import axios from "axios";
     import baseUrl from "../util/api";
+    import {mapActions} from "vuex";
 
     export default {
         name: 'UserHome',
@@ -59,6 +65,12 @@
         }),
         components: {},
         methods: {
+            ...mapActions({
+                signOut: 'user/logOut'
+            }),
+            logOut() {
+                this.signOut()
+            },
             getHumanSettlements() {
                 axios.get(`${baseUrl}/human-settlement`)
                     .then(res => {
