@@ -7,18 +7,13 @@
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <router-link to="/admin" class="navbar-brand">Система прогнозування</router-link>
+                <router-link to="/user" class="navbar-brand">Система прогнозування</router-link>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Контакти</a>
                         </li>
                     </ul>
-                </div>
-                <div>
-                    <router-link to="/add-human-settlement" class="btn btn-primary">
-                        Додати населений пункт
-                    </router-link>
                 </div>
             </nav>
         </header>

@@ -9,6 +9,7 @@ import Contacts from "../views/Contacts"
 import AddHumanSettlement from "../views/AddSettlement"
 import CityDetails from "../views/CityDetails";
 import GetPredict from "../views/GetPredict";
+import Profile from "../views/Profile"
 
 Vue.use(VueRouter)
 
@@ -74,6 +75,14 @@ const routes = [
         path: '/predict',
         name: 'GetPredict',
         component: GetPredict,
+        meta: {
+            requiredAuth: true
+        }
+    },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: Profile,
         meta: {
             requiredAuth: true
         }
